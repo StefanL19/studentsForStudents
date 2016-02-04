@@ -1,0 +1,39 @@
+<template name="dashboard">
+
+<div class="container">
+
+	<div class="col-md-3 col-lg-3 col-xs-12 user_info">
+	<div class="info_user">
+		<ul class="list-group">
+
+		  <li class="list-group-item list-group-item-success"><center>User: {{userInfo.profile.username}}</center></li>
+		  <li class="list-group-item list-group-item-info">First-Name: {{userInfo.profile.firstName}}</li>
+		  <li class="list-group-item list-group-item-info">Family-Name: {{userInfo.profile.lastName}}</li>
+		  <li class="list-group-item list-group-item-info">Master Subject: {{userInfo.profile.subject}}</li>
+		  <li class="list-group-item list-group-item-info">Country: {{userInfo.profile.country}}</li>
+
+		</ul>
+	</div>	
+
+	</div><!-- / user_info -->
+
+	<div class="col-md-3 col-lg-3 col-xs-12 subjects">
+
+
+
+	</div><!-- / subjects -->
+
+	<div class="col-md-3 col-lg-3 col-xs-12 recent_posts">
+
+
+
+	</div><!-- / recent_posts -->
+
+	<div class="col-md-3 col-lg-3 col-xs-12 notifications">
+
+
+
+	</div><!-- / notifications -->
+</div><!-- / container -->
+
+</template>

@@ -1,0 +1,19 @@
+<template name="ApplicationLayout">
+	<head>
+		<title>Students For Studetns</title>
+	</head>
+
+	<body>
+		
+	<div class="container">
+		{{>yield "navbar"}}
+
+	<div class="mainarea">
+		{{>yield "main"}}
+		{{>yield "footer"}}
+	</div>
+
+	</div><!-- / container -->
+
+	</body>
+</template>
