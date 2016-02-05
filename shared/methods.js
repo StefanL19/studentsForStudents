@@ -5,7 +5,6 @@ Meteor.methods({
 		if (this.userId) {
 			newPost.user  = this.userId;
 			newPost._id = Posts.insert(newPost);
-			console.log(newPost.user);
 		}
 	},
 
