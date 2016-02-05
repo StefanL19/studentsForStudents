@@ -1,0 +1,16 @@
+<template name="post">
+
+	<div class="container">
+
+		<center><h3>{{post.title}}</h3></center><br/>
+		<p>{{post.text}}</p><br/>
+
+		{{#if post.image}}
+
+			<img src="{{post.image}}" class="postImage">
+
+		{{/if}}
+
+	</div>
+
+</template>

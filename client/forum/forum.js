@@ -6,6 +6,7 @@ Template.forum.helpers({
 	 	var postsArray = [];
 	 	posts.forEach(function(entry){
 	 		var object = new Object();
+	 		object._id = entry._id;
 	 		object.title = entry.title;
 	 		if (entry.content instanceof HTMLElement) {
 	 			object.text =  $(entry.content).text();

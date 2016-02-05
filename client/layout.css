@@ -38,3 +38,8 @@
 	position:relative;
 	top:1px;
 }
+
+.postImage{
+	height: 300px;
+	width: 400px;
+}
