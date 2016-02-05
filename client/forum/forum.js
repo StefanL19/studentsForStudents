@@ -7,11 +7,19 @@ Template.forum.helpers({
 	 	posts.forEach(function(entry){
 	 		var object = new Object();
 	 		object.title = entry.title;
-	 		object.text =  $(entry.content).text();
-	 		object.image = entry.content.match(/<img src="(.*?)"/)[1];
+	 		if (entry.content instanceof HTMLElement) {
+	 			object.text =  $(entry.content).text();
+	 		}
+	 		else{
+	 			object.text = entry.content;
+	 		}
+
+	 		if (entry.content.match(/<img src="(.*?)"/)) {
+	 			object.image = entry.content.match(/<img src="(.*?)"/)[1];
+	 		}
 	 		console.log(object);
 	 		postsArray.push(object);
-	 	});
+	 	})
 	 	return postsArray;
 	 },// returns posts
 
