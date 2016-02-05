@@ -20,3 +20,7 @@ twbs:bootstrap
 accounts-password
 ian:accounts-ui-bootstrap-3
 iron:router
+fortawesome:fontawesome
+aldeed:collection2
+aldeed:autoform
+aldeed:simple-schema
