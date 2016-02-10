@@ -8,6 +8,12 @@ Meteor.methods({
 		}
 	},
 
-
+	answerEntry:function(newAnswer){
+		console.log("I am inserting a new answer");
+		if (this.userId) {
+			newAnswer.user = this.userId;
+			newAnswer._id = Answers.insert(newAnswer);
+		}
+	}
 
 });

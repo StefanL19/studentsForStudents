@@ -23,6 +23,11 @@ Template.post.helpers({
 	 		}
 		}
 		return object;
+	},
+
+	postDoc:function(){
+		var post = Session.get("postId");
+		return post;
 	}
 
 });
