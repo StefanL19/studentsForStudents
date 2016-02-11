@@ -35,6 +35,9 @@ Images.allow({
   },
   'update': function(){
   	return true;
+  },
+  'download':function(){
+  	return true;
   }
 });
 

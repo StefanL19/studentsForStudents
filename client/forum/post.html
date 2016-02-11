@@ -57,6 +57,12 @@
 	</div>
 	 {{> dropzone}}
 
+	 {{#each images}}
+      <div>
+        <img src="{{this.url}}" alt="" class="thumbnail" />
+      </div>
+    {{/each}}
+
 </template>
 
 

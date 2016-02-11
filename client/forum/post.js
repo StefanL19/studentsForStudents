@@ -37,6 +37,13 @@ Template.post.helpers({
 		console.log("these are the answers: ");
 		console.log(Answers.find({postID:postId}));
 		return Answers.find({postID:postId});
+	},
+
+	images:function(){
+		
+		var images = Images.find().fetch({});
+		console.log(images);
+		return 	images;
 	}
 
 });
@@ -54,7 +61,6 @@ Template.post.events({
 Template.dropzone.events({
 	'dropped #dropzone': function(event, temp) {
       console.log('files droped');
-
        FS.Utility.eachFile(event, function(file) {
         var id = Images.insert(file);
         console.log('Inserted file ');
