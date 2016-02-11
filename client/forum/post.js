@@ -28,6 +28,15 @@ Template.post.helpers({
 	postDoc:function(){
 		var post = Session.get("postId");
 		return post;
+	},
+
+	answers:function(){
+		var postId = Session.get("postId");
+		console.log("this is the postId: ");
+		console.log(postId);
+		console.log("these are the answers: ");
+		console.log(Answers.find({postID:postId}));
+		return Answers.find({postID:postId});
 	}
 
 });
@@ -42,3 +51,14 @@ Template.post.events({
 
 });
 
+Template.dropzone.events({
+	'dropped #dropzone': function(event, temp) {
+      console.log('files droped');
+
+       FS.Utility.eachFile(event, function(file) {
+        var id = Images.insert(file);
+        console.log('Inserted file ');
+        console.log(id);
+      });
+  }
+});

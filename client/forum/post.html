@@ -13,13 +13,11 @@
 		<br/>
 		<div class="row">
 
-			<div class="col-md-6 col-xs-12">
-				<center><h3>Answers</h3></center> 
-			</div>
+				<center><h3>Answer</h3></center> 
 
-			<div class="col-md-6 col-xs-12">
+			<!--<div class="col-md-6 col-xs-12">
 				<button class="btn btn-success">New Answer</button>
-			</div>
+			</div>-->
 
 		</div>
 		<hr/>
@@ -28,31 +26,48 @@
 
 		<fieldset>
 				      {{> afQuickField name='title'}}
-				      {{> afQuickField name='post' value = postDoc type='hidden'}}
+				      {{> afQuickField name='postID' value = postDoc type='hidden'}}
 				      {{> afQuickField name='user' type = 'hidden'}}
 				      {{> afQuickField name='content' rows=10}}
 		</fieldset>
 
-		<button type="submit" class="btn btn-primary">Ask</button>
+		<button type="submit" class="btn btn-primary">Answer</button>
 
 		{{/autoForm}}
 
+		<div class="answers">
+
+		{{#each answers}}
+
+			<div class="row">
+				<h4>{{username}}</h4>
+			</div>
+
+			<div class="row">
+
+					{{#mathjax}}
+				<h4>{{content}}</h4>
+					{{/mathjax}}
+			</div>			
+
+		{{/each}}
+
+		</div>
 
 	</div>
+	 {{> dropzone}}
+
+</template>
 
 
-	{{#mathjax}}
-<p>Let $(a_n)$, $(b_n)$ and $(c_n)$ be series
-   of real numbers with $a_n\leq b_n\leq c_n$
-   for each $n$. Supposing that $(a_n)$ and $(c_n)$
-   are convergent to the same limit, $(b_n)$
-   is also convergent, and moreover</p>
-<p>
-  <!-- this equation will be displayed -->
-  $$
-  \lim a_n=\lim b_n=\lim c_n.
-  $$
-</p>
-{{/mathjax}}
-
+<template name="dropzone">
+  <div class="row">
+    <div class="col-md-12">
+      <div id="dropzone" class="dropzone">
+        <div class="well well-drop-zone">
+          Drop file(s) here to upload
+        </div>
+      </div>
+    </div>
+  </div>
 </template>

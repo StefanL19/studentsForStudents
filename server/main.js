@@ -17,3 +17,24 @@ Meteor.publish('notifications', function(){
 Meteor.publish('top', function(){
 	return Top.find({});
 });
+
+Meteor.publish('answers', function(){
+	return Answers.find({});
+});
+
+Meteor.publish("images", function () {
+	//var Collection = Images.find({}).fetch({});
+	//console.log(Collection);
+  return Images.find({});
+});
+
+Images.allow({
+  'insert': function () {
+    // add custom authentication code here
+    return true;
+  },
+  'update': function(){
+  	return true;
+  }
+});
+
