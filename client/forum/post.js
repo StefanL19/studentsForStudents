@@ -32,10 +32,6 @@ Template.post.helpers({
 
 	answers:function(){
 		var postId = Session.get("postId");
-		console.log("this is the postId: ");
-		console.log(postId);
-		console.log("these are the answers: ");
-		console.log(Answers.find({postID:postId}));
 		return Answers.find({postID:postId});
 	},
 
@@ -54,7 +50,44 @@ Template.post.helpers({
 
 Template.post.events({
 
+	'click .js-vote-up':function(event){
+		var postId = Session.get("postId");
+		console.log(postId);
+		var post = Posts.findOne({_id:postId});
+		console.log(post);
+		if (!post.rating) {
+			var rating = 1;
+		}
 
+		else{
+			var rating = post.rating + 1;
+		}
+
+		Posts.update(
+			{"_id": post._id},
+			{$set: {rating:rating}}
+		);
+
+	},
+
+
+	'click .js-vote-down':function(event){
+		var postId = Session.get("postId");
+		var post = Posts.findOne({_id:postId});
+
+		if (!post.rating) {
+			var rating = undefined;
+		}
+
+		else{
+			var rating = post.rating - 1;
+		}
+
+		Posts.update(
+			{"_id": post._id},
+			{$set: {rating:rating}}
+		);	
+	}
 
 });
 

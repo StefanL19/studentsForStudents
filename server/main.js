@@ -42,5 +42,10 @@ Images.allow({
   }
 });
 
+Posts.allow({
+  'update': function(){
+    return true;
+  }
+})
 
 

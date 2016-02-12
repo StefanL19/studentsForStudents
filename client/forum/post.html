@@ -2,7 +2,22 @@
 
 	<div class="container">
 
-		<center><h3>{{post.title}}</h3></center><br/>
+	<div class="row css-btn-votes">
+		<br/>
+		<div class="css-title-post">
+			<div class="css-text-title">
+				<p class="css-p-title">{{post.title}}</p>
+				<button type="button" class="btn btn-default css-btn-votes-all js-vote-up">
+				<span class="glyphicon glyphicon-hand-up votes-glyph-up" aria-hidden="true"></span>
+				</button>
+				<button type="button" class="btn btn-default css-btn-votes-all js-vote-down">
+				<span class="glyphicon glyphicon-hand-down votes-glyph-down" aria-hidden="true"></span>
+				</button>
+			</div>
+		</div>
+		{{post.rating}}
+		<br/>
+	</div>
 		<p>{{post.content}}</p><br/>
 
 		<!--{{#if post.image}}
@@ -73,7 +88,7 @@
     <div class="col-md-12">
       <div id="dropzone" class="dropzone">
         <div class="well well-drop-zone">
-          Drop file(s) here to upload
+          If you want to add an image to your answer, drop it here.
         </div>
       </div>
     </div>

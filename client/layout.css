@@ -43,3 +43,36 @@
 	height: 300px;
 	width: 400px;
 }
+
+.css-btn-votes{
+	background-color: #1fcbff !important;
+
+}
+
+.css-btn-votes-all{
+	background-color: #1fcbff !important;
+	border-color: white;
+}
+
+.css-title-post{
+	text-align: center;
+}
+
+.css-text-title{
+	font-size: 20px;
+}
+.votes-glyph-up{
+	color: white !important;
+	font-size: 15px;
+}
+.votes-glyph-down{
+	color: white !important;
+	font-size: 15px;
+}
+.css-p-title{
+	color: white;
+}
+h1, h2, h3 ,h4 ,h5 , p {
+	font-family: 'Dosis', sans-serif;
+	font-weight: 600; 
+}
