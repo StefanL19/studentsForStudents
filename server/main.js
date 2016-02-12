@@ -22,16 +22,17 @@ Meteor.publish('answers', function(){
 	return Answers.find({});
 });
 
-Meteor.publish("images", function () {
+Meteor.publish("pictures", function () {
 	//var Collection = Images.find({}).fetch({});
 	//console.log(Collection);
   return Images.find({});
 });
 
+
 Images.allow({
   'insert': function () {
-    // add custom authentication code here
-    return true;
+     
+   return true;
   },
   'update': function(){
   	return true;
@@ -40,4 +41,6 @@ Images.allow({
   	return true;
   }
 });
+
+
 

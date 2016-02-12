@@ -3,14 +3,15 @@
 	<div class="container">
 
 		<center><h3>{{post.title}}</h3></center><br/>
-		<p>{{post.text}}</p><br/>
+		<p>{{post.content}}</p><br/>
 
-		{{#if post.image}}
+		<!--{{#if post.image}}
 
 			<img src="{{post.image}}" class="postImage">
 
-		{{/if}}
+		{{/if}}-->
 		<br/>
+
 		<div class="row">
 
 				<center><h3>Answer</h3></center> 
@@ -58,6 +59,7 @@
 	 {{> dropzone}}
 
 	 {{#each images}}
+	 
       <div>
         <img src="{{this.url}}" alt="" class="thumbnail" />
       </div>

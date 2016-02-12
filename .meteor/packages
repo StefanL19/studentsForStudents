@@ -29,3 +29,4 @@ mrt:mathjax
 cfs:filesystem
 raix:ui-dropped-event
 cfs:standard-packages
+cfs:dropbox
