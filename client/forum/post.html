@@ -7,6 +7,8 @@
 		<div class="css-title-post">
 			<div class="css-text-title">
 				<p class="css-p-title">{{post.title}}</p>
+				<button type="button" class="btn btn-default css-btn-votes-all css-answer js-answer">
+				Answer</button>
 				<button type="button" class="btn btn-default css-btn-votes-all js-vote-up">
 				<span class="glyphicon glyphicon-hand-up votes-glyph-up" aria-hidden="true"></span>
 				</button>
@@ -15,10 +17,35 @@
 				</button>
 			</div>
 		</div>
-		{{post.rating}}
+
 		<br/>
 	</div>
-		<p>{{post.content}}</p><br/>
+        <div class="row">
+            <div class="col-md-3">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="badge">14</span>
+                        <p>User:</p>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">{{post.rating}}</span>
+                        <p>Rating:</p>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">{{post.date}}</span>
+                        <p>Date:</p>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">{{post.answers}}</span>
+                        <p>Answers</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-19">
+                {{post.content}}
+            </div>
+        </div>
+		<br/>
 
 		<!--{{#if post.image}}
 
@@ -26,6 +53,7 @@
 
 		{{/if}}-->
 		<br/>
+		<div class="answerPost css-hide-answer">
 
 		<div class="row">
 
@@ -43,6 +71,8 @@
 		<fieldset>
 				      {{> afQuickField name='title'}}
 				      {{> afQuickField name='postID' value = postDoc type='hidden'}}
+                      {{> afQuickField name='rating' type = 'hidden'}}
+                      {{> afQuickField name='user' type = 'answers'}}
 				      {{> afQuickField name='user' type = 'hidden'}}
 				      {{> afQuickField name='content' rows=10}}
 		</fieldset>
@@ -62,24 +92,27 @@
 			<div class="row">
 
 					{{#mathjax}}
-				<h4>{{content}}</h4>
+						<h4>{{content}}</h4>
 					{{/mathjax}}
 			</div>			
 
 		{{/each}}
 
 		</div>
-
+		{{> dropzone}}
+	</div><!-- / answer post -->
+	
 	</div>
-	 {{> dropzone}}
-
+	 
+	
+	<!--
 	 {{#each images}}
 	 
       <div>
         <img src="{{this.url}}" alt="" class="thumbnail" />
       </div>
     {{/each}}
-
+	-->
 </template>
 
 
@@ -88,7 +121,7 @@
     <div class="col-md-12">
       <div id="dropzone" class="dropzone">
         <div class="well well-drop-zone">
-          If you want to add an image to your answer, drop it here.
+          Drop an image
         </div>
       </div>
     </div>

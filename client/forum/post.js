@@ -63,10 +63,7 @@ Template.post.events({
 			var rating = post.rating + 1;
 		}
 
-		Posts.update(
-			{"_id": post._id},
-			{$set: {rating:rating}}
-		);
+		Meteor.call("updateVote", post._id, rating);
 
 	},
 
@@ -83,10 +80,11 @@ Template.post.events({
 			var rating = post.rating - 1;
 		}
 
-		Posts.update(
-			{"_id": post._id},
-			{$set: {rating:rating}}
-		);	
+		Meteor.call("updateVote", post._id, rating);
+	},
+
+	'click .js-answer':function(event){
+		$(".answerPost").removeClass("css-hide-answer");
 	}
 
 });

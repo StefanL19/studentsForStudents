@@ -4,6 +4,9 @@ Meteor.methods({
 		console.log("I am called");
 		if (this.userId) {
 			newPost.user  = this.userId;
+			newPost.date = new Date();
+			newPost.rating = 0;
+			newPost.answers = 0;
 			newPost._id = Posts.insert(newPost);
 		}
 	},
@@ -16,6 +19,13 @@ Meteor.methods({
 			newAnswer.username = user.profile.username;
 			newAnswer._id = Answers.insert(newAnswer);
 		}
+	},
+
+	updateVote:function(postId, rating){
+		Posts.update(
+			{"_id": postId},
+			{$set: {rating:rating}}
+		);
 	}
 
 });

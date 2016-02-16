@@ -25,11 +25,22 @@ Template.forum.helpers({
 	 	
 	 },// returns posts
 
+	username:function(){
+		var id = this.user;
+		var user = Meteor.users.findOne({_id:id});
+		if(user){
+			return user.profile.username;
+		}
+		else{
+			return;
+		}
+	}
+
 });
 
 Template.forum.events({
 
-	"click .newPost":function(event){
+	"click .js-new-post":function(event){
 		$("#allUsers").modal('show');
 	}
 

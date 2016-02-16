@@ -45,12 +45,12 @@
 }
 
 .css-btn-votes{
-	background-color: #1fcbff !important;
+	background-color: #015991 !important;
 
 }
 
 .css-btn-votes-all{
-	background-color: #1fcbff !important;
+	background-color: #015991 !important;
 	border-color: white;
 }
 
@@ -72,7 +72,58 @@
 .css-p-title{
 	color: white;
 }
-h1, h2, h3 ,h4 ,h5 , p {
+h1, h2, h3 ,h4 ,h5 , p, myfont {
 	font-family: 'Dosis', sans-serif;
 	font-weight: 600; 
+}
+
+myfont{
+	font-size:18px;
+}
+.btn{
+	border-radius: 0px !important;
+}
+.css-hide-answer{
+		visibility: hidden;
+	z-index: -1;
+	position: absolute;
+}
+.css-answer{
+	color: white;
+}
+.css-answer:hover{
+	color: white;
+}
+
+.css-number-answers{
+	margin-left: 50%;
+	font-size: 20px;
+}
+.css-asked-by{
+	font-size: 20px;
+}
+.css-post-row{
+	border-bottom: 1px solid;
+	border-color: grey;
+}
+.border{
+	border-top: 1px solid;
+	border-color: grey;
+}
+.css-btn-ask{
+	width: 150px !important;
+	background-color: #015991 !important;
+	color: white;
+}
+.css-question-text{
+
+}
+.user-toolbox{
+	background-color: gainsboro;
+}
+.tools{
+	clear: both;
+	margin-bottom: 2.6%;
+	padding: 4px;
+	background-color: #e1e5ea;
 }
