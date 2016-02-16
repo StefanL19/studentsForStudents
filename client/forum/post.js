@@ -4,24 +4,6 @@ Template.post.helpers({
 	post:function(){
 		var postId = Session.get("postId");
 		var post = Posts.findOne({_id:postId});
-		//var object = new Object();
-		//if (post) {
-		//	object.title = post.title;
-		//	if (/<[a-z][\s\S]*>/i.test(post.content)) {//$(post.content).has("p") / post.content instanceof HTMLElement
-
-			//			object.text = $(post.content).text();
-					
-
-
-		 		//	if (post.content.match(/<img src="(.*?)"/)) {
-		 		//	object.image = post.content.match(/<img src="(.*?)"/)[1];
-		 		//	}
-	 		//}
-	 		//else{
-	 		//	console.log("it is not an html------------------------");
-	 		//	object.text = post.content;
-	 	//	}
-		//}
 		return post;
 	},
 
@@ -40,6 +22,18 @@ Template.post.helpers({
 		var images = Images.find().fetch({});
 		console.log(images);
 		return 	images;
+	},
+
+	username:function(){
+		var id = Session.get("postId");
+		var post = Posts.findOne({_id:id});
+		if(post){
+			var userId = post.user;
+			var user = Meteor.users.findOne({_id:userId});
+			if(user){
+				return user.profile.username;
+			}
+		}
 	}
 
 });
@@ -52,9 +46,7 @@ Template.post.events({
 
 	'click .js-vote-up':function(event){
 		var postId = Session.get("postId");
-		console.log(postId);
 		var post = Posts.findOne({_id:postId});
-		console.log(post);
 		if (!post.rating) {
 			var rating = 1;
 		}
@@ -62,8 +54,9 @@ Template.post.events({
 		else{
 			var rating = post.rating + 1;
 		}
-
+        var user = post.user;
 		Meteor.call("updateVote", post._id, rating);
+        Meteor.call("updateUserRating", user, "positive");
 
 	},
 
@@ -71,9 +64,9 @@ Template.post.events({
 	'click .js-vote-down':function(event){
 		var postId = Session.get("postId");
 		var post = Posts.findOne({_id:postId});
-
+        var userId = post.user;
 		if (!post.rating) {
-			var rating = undefined;
+			var rating = 0;
 		}
 
 		else{
@@ -81,6 +74,7 @@ Template.post.events({
 		}
 
 		Meteor.call("updateVote", post._id, rating);
+        Meteor.call("updateUserRating", userId, "negative");
 	},
 
 	'click .js-answer':function(event){

@@ -21,27 +21,51 @@
 		<br/>
 	</div>
         <div class="row">
-            <div class="col-md-3">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <span class="badge">14</span>
-                        <p>User:</p>
-                    </li>
-                    <li class="list-group-item">
-                        <span class="badge">{{post.rating}}</span>
+            <div class="col-md-3 post-user-details post-content">
+
+                <div class="row">
+                      <div class="col-md-3">
+                          <p>User:</p>
+                      </div>
+
+                      <div class="col-md-9">
+                        {{username}}
+                      </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
                         <p>Rating:</p>
-                    </li>
-                    <li class="list-group-item">
-                        <span class="badge">{{post.date}}</span>
+                    </div>
+
+                    <div class="col-md-9">
+                        {{post.rating}}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <p>Answers:</p>
+                    </div>
+
+                    <div class="col-md-9">
+                        {{post.answers}}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
                         <p>Date:</p>
-                    </li>
-                    <li class="list-group-item">
-                        <span class="badge">{{post.answers}}</span>
-                        <p>Answers</p>
-                    </li>
-                </ul>
+                    </div>
+
+                    <div class="col-md-9">
+                        {{post.date}}
+                    </div>
+                </div>
+
             </div>
-            <div class="col-md-19">
+
+            <div class="col-md-9">
                 {{post.content}}
             </div>
         </div>
