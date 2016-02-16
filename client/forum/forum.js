@@ -1,5 +1,7 @@
 
-Template.forum.helpers({
+
+
+Template.allPostsPagination.helpers({
 
 	 posts:function(){
 	 	var posts = Posts.find({});

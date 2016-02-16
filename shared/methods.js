@@ -26,6 +26,7 @@ Meteor.methods({
 			{"_id": postId},
 			{$set: {rating:rating}}
 		);
-	}
+	},
+
 
 });

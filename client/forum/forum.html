@@ -8,8 +8,14 @@
     <div class="user-toolbox">
 
         <div class="tools">
-            <div class="js-forum-properties">
-                <button class="btn btn-default css-btn-ask js-new-post"><myfont>Ask</myfont></button>
+            <div class="row">
+                <div class="js-forum-properties col-md-3">
+                    <button class="btn btn-default css-btn-ask js-new-post"><myfont>Ask</myfont></button>
+                </div>
+
+                <div class="col-md-3">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
             </div>
         </div>
 
@@ -18,36 +24,15 @@
     <br/><br/>
     <div class="border"></div>
 
-	{{#each posts}}
-    <div class="row css-post-row">
-        <div class="col-md-1">
-        </div>
-
-        <div class="col-md-6">
-            <a href="/forum/{{_id}}"><h3>{{title}}</h3><br/></a>
-        </div>
-
-        <div class="col-md-1">
-            <div class="css-number-answers"><b>1</b></div>
-            <p>answers</p>
-        </div>
-
-        <div class="col-md-4">
-            <div class="css-asked-by"><p>Asked by</p></div>
-            <p>{{username}}</p>
-        </div>
-    </div>
-	{{/each}}
+{{> pages}}
+    {{> pagesNav}}  <!--Bottom navigation-->
 </div>
 <br/>
     <div class="js-forum-properties">
         <button class="btn btn-default css-btn-ask js-new-post"><myfont>Ask</myfont></button>
     </div>
 
-
-
-
-
+    <!-- modal for new post -->
 
 <div class="modal fade" id="allUsers">
       <div class="modal-dialog">
@@ -94,6 +79,29 @@
         </div><!-- / modal-content -->
       </div><!-- / modal-dialog -->
   </div><!-- /  modal for orders-->
+    <!-- / modal for new post -->
 
 </template>
 
+<template name="allPostsPagination">
+
+    <div class="row css-post-row">
+        <div class="col-md-1">
+        </div>
+
+        <div class="col-md-6">
+            <a href="/forum/{{_id}}"><h3>{{title}}</h3><br/></a>
+        </div>
+
+        <div class="col-md-1">
+            <div class="css-number-answers"><b>1</b></div>
+            <p>answers</p>
+        </div>
+
+        <div class="col-md-4">
+            <div class="css-asked-by"><p>Asked by</p></div>
+            <p>{{username}}</p>
+        </div>
+    </div>
+
+</template>

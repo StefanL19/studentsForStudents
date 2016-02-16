@@ -6,6 +6,7 @@ aldeed:collection2-core@1.0.0
 aldeed:schema-deny@1.0.1
 aldeed:schema-index@1.0.1
 aldeed:simple-schema@1.5.3
+alethes:pages@1.8.4
 anti:i18n@0.4.3
 autoupdate@1.2.4
 babel-compiler@5.8.24_1
@@ -38,6 +39,7 @@ cfs:tempstore@0.1.5
 cfs:upload-http@0.0.20
 cfs:worker@0.1.4
 check@1.1.0
+coffeescript@1.0.11
 ddp@1.2.2
 ddp-client@1.2.1
 ddp-common@1.2.2
@@ -75,6 +77,7 @@ logging@1.0.8
 mdg:validation-error@0.2.0
 meteor@1.1.10
 meteor-base@1.0.1
+meteor-platform@1.2.3
 minifiers@1.1.7
 minimongo@1.0.10
 mobile-experience@1.0.1

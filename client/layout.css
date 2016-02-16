@@ -115,6 +115,10 @@ myfont{
 	background-color: #015991 !important;
 	color: white;
 }
+
+.css-btn-ask:hover{
+	color: aliceblue;
+}
 .css-question-text{
 
 }
