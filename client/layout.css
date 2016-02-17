@@ -101,3 +101,28 @@ myfont{
 .post-user-details{
     border-right: 1px solid;
 }
+.css-input-search{
+	position: relative;
+	left: 1px;
+	width: 100% !important;
+	max-width: 100%;
+	margin-bottom: 0;
+	border: 1px solid;
+	border-radius: 2px;
+	height: 40px !important;
+}
+.css-btn-search{
+	background-color: #ee5315;
+	width: 150px !important;
+	color: white;
+}
+.css-btn-search:hover{
+	background-color: #ee5315;
+	color:white;
+	opacity:0.8;
+}
+.css-btn-search:focus{
+	background-color: #ee5315;
+	color:white;
+	opacity:0.8;
+}

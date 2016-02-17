@@ -44,6 +44,11 @@ Template.forum.events({
 
 	"click .js-new-post":function(event){
 		$("#allUsers").modal('show');
+	},
+
+	"click .js-search-posts":function(event){
+		var valueSearch = $(".js-input-search").val();
+		Session.set("searchInput", valueSearch);
 	}
 
 });
